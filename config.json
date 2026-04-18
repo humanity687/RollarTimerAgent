@@ -1,0 +1,50 @@
+﻿{
+    "_comment": "仿生AI智能体配置模板 - 复制为 config.json 后修改",
+
+    "global": {
+        "api_key": "662fe6f94d0f4665a457cfa6ef17d6f2.q4VZvbnNAOFYKUYj",
+        "base_url": "https://open.bigmodel.cn/api/paas/v4/",
+        "timeout": 30
+    },
+
+    "layers": {
+        "instinct": {
+            "_comment": "本能层：使用轻量模型，追求速度和低成本",
+            "model": "glm-5-Turbo",
+            "temperature": 0.8,
+            "max_tokens": 500,
+            "json_mode": true,
+            "retry": {
+                "max_retries": 2,
+                "base_delay": 0.5
+            }
+        },
+        "emotion": {
+            "_comment": "情绪层：三层模式专用，两层模式下不生效",
+            "model": "glm-5-Turbo",
+            "temperature": 0.9,
+            "max_tokens": 600,
+            "json_mode": true,
+            "retry": {
+                "max_retries": 2,
+                "base_delay": 0.5
+            }
+        },
+        "consciousness": {
+            "_comment": "意识层：使用强推理模型，追求深度和准确性",
+            "model": "glm-5.1",
+            "temperature": 0.7,
+            "max_tokens": 4096,
+            "json_mode": false,
+            "retry": {
+                "max_retries": 3,
+                "base_delay": 1.0
+            }
+        }
+    },
+
+    "routing": {
+        "complexity_threshold": 3,
+        "_comment_threshold": "复杂度<=阈值时由本能层直接响应，>阈值时交给意识层"
+    }
+}

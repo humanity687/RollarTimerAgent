@@ -2,7 +2,7 @@
     "_comment": "仿生AI智能体配置模板 - 复制为 config.json 后修改",
 
     "global": {
-        "api_key": "662fe6f94d0f4665a457cfa6ef17d6f2.q4VZvbnNAOFYKUYj",
+        "api_key": "your-api-key-here",
         "base_url": "https://open.bigmodel.cn/api/paas/v4/",
         "timeout": 30
     },

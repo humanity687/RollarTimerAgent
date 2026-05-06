@@ -36,11 +36,11 @@ This project implements a **dual-process cognitive architecture** (System 1 / Sy
 
 **`agent`** (`main.py`) — Orchestrator that wires three `Chatbot` instances into a cognitive pipeline:
 
-1. **Instinct/Preprocessing (`self.prompt`)** — System 1. Receives raw user input, rewrites it with subjective emotional coloring using a 5-line structured format: `[转述]`, `[本能反应]`, `[预期价值]`, `[注意力焦点]`, `[直觉联想]`.
+1. **Instinct/Preprocessing (`self.prompt`)** — System 1. Receives raw user input, rewrites it with subjective emotional coloring using a 5-line structured format: `[Paraphrase]`, `[Instinctive Reaction]`, `[Expected Value]`, `[Attention Focus]`, `[Intuitive Association]`.
 
 2. **Reasoning/Main (`self.main`)** — System 2. Receives the preprocessed input from System 1 along with internal reward feedback from the previous round. This is the "conscious" output seen by the user.
 
-3. **Reward Center (`self.reward`)** — Evaluates each interaction round and outputs a 4-line structured assessment: `[价值回报]`, `[感受反馈]`, `[信任微调]`, `[认知负荷]`. This feedback is injected as a `system` message into System 2 on the **next** round, modulating its behavior (e.g., trust downgrades make it more conservative, high cognitive load makes it terser).
+3. **Reward Center (`self.reward`)** — Evaluates each interaction round and outputs a 4-line structured assessment: `[Value Return]`, `[Feeling Feedback]`, `[Trust Adjustment]`, `[Cognitive Load]`. This feedback is injected as a `system` message into System 2 on the **next** round, modulating its behavior (e.g., trust downgrades make it more conservative, high cognitive load makes it terser).
 
 ### Message flow (per round)
 

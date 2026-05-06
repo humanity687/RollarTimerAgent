@@ -1,0 +1,16 @@
+# API key
+config.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Logs
+*.log
+
+# Test / experimental files
+test.py
+test.html
+code-test.py
+code-test2.py
